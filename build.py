@@ -1,32 +1,49 @@
 print('[Building Site...]')
-pages = [
-    {
-        "filename": "content/index.html",
-        "output": "docs/index.html",
-        "title": "Zachary Lake",
-        "active": "active-index",
-    },
-   
-    {
-        "filename": "content/blog.html",
-        "output": "docs/blog.html",
-        "title": "My Blog",
-        "active": "active-blog",
-    },
+import glob
+import os
 
-    {
-        "filename": "content/projects.html",
-        "output": "docs/projects.html",
-        "title": "My Projects",
-        "active": "active-projects",
-    },
-    {
-        "filename": "content/contact.html",
-        "output": "docs/contact.html",
-        "title": "Contact Page",
-        "active": "active-contact",
-    },
-]
+all_html_files = glob.glob('content/*.html')
+
+pages = []
+
+for item in all_html_files:
+    file_path = os.path.basename(item)
+    name_only, extension = os.path.splitext(file_path) 
+    pages.append({
+    "filename": item,
+    "output": 'docs/' + file_path,
+    "active": 'active-' + name_only,
+    })
+print(pages)
+
+# pages = [
+#     {
+#         "filename": "content/index.html",
+#         "output": "docs/index.html",
+#         "title": "Zachary Lake",
+#         "active": "active-index",
+#     },
+   
+#     {
+#         "filename": "content/blog.html",
+#         "output": "docs/blog.html",
+#         "title": "My Blog",
+#         "active": "active-blog",
+#     },
+
+#     {
+#         "filename": "content/projects.html",
+#         "output": "docs/projects.html",
+#         "title": "My Projects",
+#         "active": "active-projects",
+#     },
+#     {
+#         "filename": "content/contact.html",
+#         "output": "docs/contact.html",
+#         "title": "Contact Page",
+#         "active": "active-contact",
+#     },
+# ]
 
 # apply_template function will read in base template and
 # replace content and title string with code from each html page
