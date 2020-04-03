@@ -1,0 +1,245 @@
+body {
+    font-family: 'Lora', serif;
+    background-image: linear-gradient(rgba(47, 23, 15, 0.65), rgba(11, 54, 29, 0.65)), url("../images/matrix-background-med.jpg");   
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+
+}
+
+/* Heading styles */
+.site-heading {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: 'Raleway';
+  }
+
+.site-heading .site-heading-upper {
+    display: block;
+    font-size: 4rem;
+    font-weight: 300;
+  }
+  
+  .site-heading .site-heading-lower {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 4rem;
+  }
+
+  .section-heading {
+    text-transform: uppercase;
+  }
+  
+  .section-heading .section-heading-upper {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+  }
+
+  .section-heading .section-heading-blog {
+    display: block;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .section-heading .section-heading-lower {
+    display: block;
+    font-size: 1rem;
+    font-weight: 100;
+  }
+
+  /* Navbar styles */
+  #mainNav {
+    background-color: rgba(66, 65, 62, 0.65);
+    font-family: 'Raleway';
+  }
+
+  #navbarMenu .nav-item.active .nav-link {
+    color: rgba(9, 110, 51, 0.65)
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 800;
+  }
+
+
+/* Home page styles */ 
+  
+.about {
+  background-color: rgba(9, 110, 51, 0.65);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.bio {
+  background-color: rgba(102, 26, 0, 0.85);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.bio .bio-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85)
+}
+
+.bio .bio-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+}
+
+
+.cta {
+  background-color: rgba(102, 26, 0, 0.85);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.cta .cta-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85)
+}
+
+.cta .cta-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+}
+
+/* Projects page styles */
+.projects {
+  background-color: rgba(65, 65, 65, 0.85);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.projects .projects-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85)
+}
+
+.projects .projects-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+}
+
+/* Blog page styles */
+
+.blog-item {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.blog-item-title {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.blog-item .blog-item-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  max-height: 400px;
+  overflow: auto;
+}
+
+.blog-item .blog-item-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 992px) {
+  .blog-item .blog-item-title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -3rem;
+  }
+  .blog-item .blog-item-img {
+    position: relative;
+    z-index: 0;
+    max-width: 60vw;
+  }
+  .blog-item .blog-item-description {
+    position: relative;
+    z-index: 1;
+    margin-top: -3rem;
+    max-width: 50vw;
+  }
+}
+
+.btn-primary {
+  background-color: rgba(9, 110, 51);
+}
+
+/* Contact Form style */
+
+.contact-form {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Contact button styles*/
+.fa {
+  padding: 20px;
+  font-size: 40px;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-linkedin {
+  background: rgb(10, 148, 167);
+  color: white;
+}
+
+.fa-github {
+  background: rgb(10, 148, 167);
+  color: white;
+}
+
+
+.footer {
+  background-color: rgba(66, 65, 62, 0.65); 
+  color: rgba(255, 255, 255, 0.7);
+}
