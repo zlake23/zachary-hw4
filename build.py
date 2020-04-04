@@ -17,46 +17,6 @@ def page_list():
         "active": 'active_' + name_only,
         })
 
-
-# index_html = open("content/index.html").read()
-# template_html = open("templates/base.html").read()
-# template = Template(template_html)
-# result = template.render({
-#     "title": "Homepage",
-#     "content": index_html,
-#     page['active']: "active",
-# })
-# print(result)
-
-# pages = [
-#     {
-#         "filename": "content/index.html",
-#         "output": "docs/index.html",
-#         "title": "Zachary Lake",
-#         "active": "active-index",
-#     },
-   
-#     {
-#         "filename": "content/blog.html",
-#         "output": "docs/blog.html",
-#         "title": "My Blog",
-#         "active": "active-blog",
-#     },
-
-#     {
-#         "filename": "content/projects.html",
-#         "output": "docs/projects.html",
-#         "title": "My Projects",
-#         "active": "active-projects",
-#     },
-#     {
-#         "filename": "content/contact.html",
-#         "output": "docs/contact.html",
-#         "title": "Contact Page",
-#         "active": "active-contact",
-#     },
-# ]
-
 # apply_template function will read in base template and
 # replace content and title string with code from each html page
 def apply_template(content, page, active):
