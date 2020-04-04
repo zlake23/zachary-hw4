@@ -37,18 +37,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item {{active_about}} px-lg-4">
-                            <a class="nav-link text-uppercase text-expanded" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item {{active_blog}} px-lg-4">
-                            <a class="nav-link text-uppercase text-expanded" href="blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item {{active_projects}} px-lg-4">
-                            <a class="nav-link text-uppercase text-expanded" href="projects.html">Projects</a>
-                        </li>
-                        <li class="nav-item {{active_contact}} px-lg-4">
-                            <a class="nav-link text-uppercase text-expanded" href="contact.html">Contact</a>
-                        </li>
+                        {% for page in pages %}
+                            <li class="nav-item px-lg-4">
+                                <a class="nav-link text-uppercase text-expanded" href="{{ page.link }}">{{ page.title }}</a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

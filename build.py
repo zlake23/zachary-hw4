@@ -15,7 +15,8 @@ def page_list():
         "filename": item,
         "output": 'docs/' + file_path,
         "active": 'active_' + name_only,
-        "title": name_only
+        "title": name_only,
+        "link": file_path,
         })
 
 # apply_template function will read in base template and
@@ -27,6 +28,7 @@ def apply_template(content, page, active):
     result = template.render({
         "title": page['title'],
         "content": content,
+        "pages": pages,
         page['active']: "active",
     })
     return result
