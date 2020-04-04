@@ -14,7 +14,7 @@ def page_list():
         pages.append({
         "filename": item,
         "output": 'docs/' + file_path,
-        "active": 'active_' + name_only,
+        "active": "{{active_" + name_only + "}}",
         "title": name_only,
         "link": file_path,
         })
