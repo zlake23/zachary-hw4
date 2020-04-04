@@ -6,7 +6,7 @@ from jinja2 import Template
 all_html_files = glob.glob('content/*.html')
 pages = []
 
-
+#builds pages list by iterating through files in content directory
 def page_list():
     for item in all_html_files:
         file_path = os.path.basename(item)
@@ -15,15 +15,17 @@ def page_list():
         "filename": item,
         "output": 'docs/' + file_path,
         "active": 'active_' + name_only,
+        "title": name_only
         })
 
 # apply_template function will read in base template and
-# replace content and title string with code from each html page
+# replace {{content}} {{title}} and {{active_...} string 
+# with code from each html page
 def apply_template(content, page, active):
     template_html = open("templates/base.html").read()
     template = Template(template_html)
     result = template.render({
-        "title": "Homepage",
+        "title": page['title'],
         "content": content,
         page['active']: "active",
     })
