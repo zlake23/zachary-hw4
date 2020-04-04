@@ -1,21 +1,31 @@
 print('[Building Site...]')
 import glob
 import os
+from jinja2 import Template
 
 all_html_files = glob.glob('content/*.html')
 
 pages = []
+def page_list():
+    for item in all_html_files:
+        file_path = os.path.basename(item)
+        name_only, extension = os.path.splitext(file_path) 
+        pages.append({
+        "filename": item,
+        "output": 'docs/' + file_path,
+        "active": 'active_' + name_only,
+        })
 
-for item in all_html_files:
-    file_path = os.path.basename(item)
-    name_only, extension = os.path.splitext(file_path) 
-    pages.append({
-    "filename": item,
-    "output": 'docs/' + file_path,
-    "active": 'active-' + name_only,
-    })
-print(pages)
 
+index_html = open("content/index.html").read()
+template_html = open("templates/base.html").read()
+template = Template(template_html)
+result = template.render({
+    "title": "Homepage",
+    "content": index_html,
+    page['active']: "active",
+})
+print(result)
 # pages = [
 #     {
 #         "filename": "content/index.html",
@@ -47,33 +57,33 @@ print(pages)
 
 # apply_template function will read in base template and
 # replace content and title string with code from each html page
-def apply_template(content, title, active):
-    template = open('./templates/base.html').read()
-    template = template.replace("{{content}}", content)
-    template = template.replace("{{title}}", title)
-    template = template.replace("{{" + active + "}}", "active")
-    return template
+# def apply_template(content, title, active):
+#     template = open('./templates/base.html').read()
+#     template = template.replace("{{content}}", content)
+#     template = template.replace("{{title}}", title)
+    # template = template.replace("{{" + active + "}}", "active")
+#     return template
 
-# build function will write the completed webpage 
-# to the docs directory
-def build(doc, page):
-        finished_doc = open(page['output'], 'w+').write(doc)
-        return finished_doc
+# # build function will write the completed webpage 
+# # to the docs directory
+# def build(doc, page):
+#         finished_doc = open(page['output'], 'w+').write(doc)
+#         return finished_doc
 
-# main function will read in content from pages list
-# build pages with apply_template and write to docs directory with build
-def main():
-    for page in pages:
-        content = open(page['filename']).read()
-        title = page['title']
-        active = page['active']
-        print('Reading:', page['filename'])
-        doc = apply_template(content, title, active)
-        print('Compiling template...')
-        finished_webpage = build(doc, page)
-        print('Writing to docs:', page['output'])
-    print('[Website built]')
+# # main function will read in content from pages list
+# # build pages with apply_template and write to docs directory with build
+# def main():
+#     for page in pages:
+#         content = open(page['filename']).read()
+#         title = page['title']
+#         active = page['active']
+#         print('Reading:', page['filename'])
+#         doc = apply_template(content, title, active)
+#         print('Compiling template...')
+#         finished_webpage = build(doc, page)
+#         print('Writing to docs:', page['output'])
+#     print('[Website built]')
 
-# invoke main function to run build script       
-if __name__ == "__main__":
-    main()
+# # invoke main function to run build script       
+# if __name__ == "__main__":
+#     main()
