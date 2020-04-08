@@ -16,5 +16,5 @@ if len(sys.argv) > 1:
         print('Please specify "build" or "new"')
 else:
     print('''Usage:
-            Rebuild site: python manage.py build
-            Create new page: python manage.py new''')
+        Rebuild site: python manage.py build
+        Create new page: python manage.py new''')
