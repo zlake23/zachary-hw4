@@ -2,15 +2,19 @@ import utils
 import sys
 
 
-command = sys.argv[1]
 
-if command == "build":
-    print("[Build was specified]")
-    if __name__ == "__main__":
-        utils.main()
-elif command == "new":
-    print("New page was specified")
-    utils.new_page()
-
+if len(sys.argv) > 1:
+    command = sys.argv[1]
+    if command == "build":
+        print("[Build was specified]")
+        if __name__ == "__main__":
+            utils.main()
+    elif command == "new":
+        print("New page was specified")
+        utils.new_page()
+    else:
+        print('Please specify "build" or "new"')
 else:
-    print("Please specify 'build' or 'new'")
+    print('''Usage:
+            Rebuild site: python manage.py build
+            Create new page: python manage.py new''')

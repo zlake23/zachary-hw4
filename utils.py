@@ -22,8 +22,7 @@ def page_list():
 
 def new_page():
     file_name = input('File name? ')
-    file_content = '''
-    <h1>New Page</h1>
+    file_content = '''<h1>New Page</h1>
     <p>New content...</p>'''
     open('content/' + file_name, 'w+').write(file_content)
 
