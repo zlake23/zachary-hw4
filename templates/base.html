@@ -38,7 +38,7 @@
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav mx-auto">
                         {% for page in pages %}
-                            <li class="nav-item {{ page.active }} px-lg-4">
+                            <li class="nav-item {% if page.active == title %}active{% endif %} px-lg-4">
                                 <a class="nav-link text-uppercase text-expanded" href="{{ page.link }}">{{ page.title }}</a>
                             </li>
                         {% endfor %}
