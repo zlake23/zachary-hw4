@@ -10,5 +10,7 @@ if command == "build":
         utils.main()
 elif command == "new":
     print("New page was specified")
+    utils.new_page()
+
 else:
     print("Please specify 'build' or 'new'")

@@ -2,12 +2,13 @@ import glob
 import os
 from jinja2 import Template
 
-all_html_files = glob.glob('content/*.html')
+
 pages = []
 
 
 #builds pages list by iterating through files in content directory
 def page_list():
+    all_html_files = glob.glob('content/*.html')
     for item in all_html_files:
         file_path = os.path.basename(item)
         name_only, extension = os.path.splitext(file_path) 
@@ -18,6 +19,13 @@ def page_list():
         "title": name_only,
         "link": file_path,
         })
+
+def new_page():
+    file_name = input('File name? ')
+    file_content = '''
+    <h1>New Page</h1>
+    <p>New content...</p>'''
+    open('content/' + file_name, 'w+').write(file_content)
 
 # apply_template function will read in base template and
 # replace {{content}} {{title}} and {{active_...} string 
