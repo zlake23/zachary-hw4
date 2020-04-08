@@ -43,8 +43,8 @@ def apply_template(content, page, active):
 # build function will write the completed webpage 
 # to the docs directory
 def build(doc, page):
-        finished_doc = open(page['output'], 'w+').write(doc)
-        return finished_doc
+    finished_doc = open(page['output'], 'w+').write(doc)
+    return finished_doc
 
 # main function will read in content from pages list
 # build pages with apply_template and write to docs directory with build
